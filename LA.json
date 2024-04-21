@@ -1,10 +1,10 @@
-{"name": "lehar", "age": 22, "term": "e"}
-{"name": "richa", "age": 21, "term": "f"}
-{"name": "isha", "age": 23, "term": "g"}
+{"name": "lehar", "age": 22, "term": "e", "course": "msc"}
+{"name": "richa", "age": 21, "term": "f", "course": "bsc"}
+{"name": "isha", "age": 23, "term": "g", "course": "bcom"}
 
-{"name": "ria", "age": 21, "term": "s"}
-{"name": "a", "age": 23, "term": "r"}
-{"name": "icha", "age": 21, "term": "r"}
-{"name": "sdisha", "age": 23, "term": "e"}
-
-{"name": "disha", "age": 13, "term": "xxx"}
+{"name": "ria", "age": 21, "term": "s", "course": "bba"}
+{"name": "a", "age": 23, "term": "r", "course": "bca"}
+{"name": "icha", "age": 21, "term": "r", "course": "mba"}
+{"name": "sdisha", "age": 23, "term": "e", "course": "btech"}
+{"name": "nisha", "age": 13, "term": "xxx", "course": "mca"}
+{"name": "disha", "age": 13, "term": "xxx", "course": "mca"}

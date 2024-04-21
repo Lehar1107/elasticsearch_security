@@ -131,6 +131,7 @@ setup.kibana:
 output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["localhost:9200"]
+  #index: "new_index"
   
   # Protocol - either `http` (default) or `https`.
   #protocol: "https"
@@ -229,7 +230,8 @@ filebeat.inputs:
   - type: log
     enabled: true
     paths:
-      - F:/LA.json  # Adjust the path as needed"F:\LA.json"
+      - C:/Users/LEHAR/OneDrive/Desktop/elasticsearch_filebeat_pythonscripts/LA.json
+      #- F:/LA.json  # Adjust the path as needed"F:\LA.json"
 
 # output.kafka:
 #   hosts: ["localhost:9"]

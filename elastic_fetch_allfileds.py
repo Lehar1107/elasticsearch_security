@@ -16,27 +16,52 @@ def fetchData(es, indexdata):
     query = {"query": {"match_all": {}}}
     documents = scan(es, index=index1, query=query)
     return [doc['_source'] for doc in documents]
-
+#########fetch fileds by giving name ################
 def my_code():
     objects = fetchData(es, index1)
     output = ""
 
-    output += "Total fetched names:\n"
+    output += "Fetched data:\n"
     for obj in objects:
         if "message" in obj:
             message = obj.get("message")
             try:
-                name_data = json.loads(message)
-                if "name" in name_data:
-                    output += f"{name_data['name']}\n"
+                data = json.loads(message)
+                if "name" in data and "age" in data and "term" in data:
+                    output += f"Name: {data['name']}, Age: {data['age']}, Term: {data['term']}\n"
                 else:
-                    output += f"Name field not found in message: {message}\n"
+                    missing_fields = [field for field in ["name", "age", "term"] if field not in data]
+                    output += f"Missing fields in message: {', '.join(missing_fields)}\n"
             except json.JSONDecodeError:
                 output += f"Invalid JSON format in message: {message}\n"
         else:
             output += f"Message field not found in document: {obj}\n"
 
     return output
+
+######fetch multiple fields ###################
+def my_code():
+    objects = fetchData(es, index1)
+    output = ""
+
+    output += "Fetched data:\n"
+    for obj in objects:
+        if "message" in obj:
+            message = obj.get("message")
+            try:
+                data = json.loads(message)
+                if "name" in data and "age" in data and "term" in data:
+                    output += f"Name: {data['name']}, Age: {data['age']}, Term: {data['term']}\n"
+                else:
+                    missing_fields = [field for field in ["name", "age", "term"] if field not in data]
+                    output += f"Missing fields in message: {', '.join(missing_fields)}\n"
+            except json.JSONDecodeError:
+                output += f"Invalid JSON format in message: {message}\n"
+        else:
+            output += f"Message field not found in document: {obj}\n"
+
+    return output
+
 
 def send_email(body):
     # Email configuration
